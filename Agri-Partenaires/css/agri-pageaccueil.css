@@ -1,0 +1,455 @@
+
+header {
+    background-color: green;
+    padding: 10px;
+    display: flex;
+}
+
+header img {
+    width:50px;
+    height:50px;
+    border-radius: 20px;
+    margin-right: 40px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #eef2f3;
+    color: #333;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    position: relative;
+    margin-right: 20px; /* Ajoute un espacement à droite pour chaque lien (ajustez selon vos besoins) */
+    font-weight: bold;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid white; 
+    
+}
+
+.img-logo img {
+    width: 97%;  /* L'image occupe toute la largeur du conteneur */
+    max-height: 250px;  /* Définir une hauteur maximale pour l'image */
+    margin: 15px auto;  /* Centre l'image avec une marge */
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;  /* Centre l'image comme un bloc */
+}
+
+
+
+.title {
+    text-align: center;
+}
+
+
+
+
+.title h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 20px;
+}
+
+.title a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.title a:hover {
+    text-decoration: underline;
+    color: rgba(54, 48, 48, 0.811);
+}
+
+.presentation-entreprise {
+    padding: 80px;
+    text-align: center;
+    animation: reveal linear;
+    animation-timeline: view();
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement */
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1); /* Corrigé l'erreur de typographie dans scale */
+        opacity: 1; /* Corrigé l'erreur de typographie dans opacity */
+    }
+}
+
+.presentation-entreprise2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permet d'enrouler les éléments enfants */
+    gap: 25px;
+    width: 100%; /* Utiliser 100% pour rendre le conteneur responsive */
+    max-width: 900px; /* Limite maximale de la largeur */
+    margin: 0 auto; /* Centrer le conteneur */
+}
+
+.name-society, .introduction, .objectif {
+    flex: 1 1 100%; /* Prend toute la largeur en mode colonne */
+    box-sizing: border-box; /* Inclure padding et border dans la largeur totale */
+    margin-bottom: 20px; /* Espace entre les éléments */
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease; /* Ajout de la transition pour l'ombre */
+}
+
+.name-society {
+    background-color: white;
+}
+
+.introduction {
+    background-color: yellow;
+}
+
+.objectif {
+    background-color: burlywood;
+}
+
+.name-society:hover, .introduction:hover, .objectif:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query pour écrans larges */
+@media (min-width: 768px) {
+    .name-society, .introduction, .objectif {
+        flex: 1 1 calc(33.33% - 25px); /* Ajustement pour trois colonnes avec espace */
+    }
+}
+
+.social-network {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.social-network a {
+    text-decoration: none;
+    color: #1877f2;
+}
+
+.social-network a:hover {
+    color: #1876f2c7;
+}
+
+.social-network a i {
+    font-size: 50px;
+    margin: 5px;
+}
+
+
+.collaboration {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.collaboration a {
+    text-decoration: none;
+    color: black;
+}
+
+.collaboration a:hover {
+    color: #33333398;
+}
+
+.partenaire {
+    margin-left: 40px;
+}
+
+
+.info-newsletter {
+    background-image: url('../Image/image2.jpeg');
+    width: 100%;
+    height: 500px; 
+    background-size: cover; /* Pour couvrir toute la zone */
+    background-position: center; /* Pour centrer l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+}
+
+.info-newsletter h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+
+.title-team {
+    text-align: center;
+}
+
+.title-team h2:hover {
+    text-decoration: underline;
+}
+
+
+#projects {
+    padding: 50px 20px;
+}
+
+#projects h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    width: 300px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.project-card p {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.project-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background: #1877f2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.project-card .btn:hover {
+    background: #1876f2c5;
+}
+
+
+.project-card .btn:hover {
+    background: #1876f2c5;
+}
+
+
+
+.partenaire-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.partenaire-title:hover {
+    text-decoration: underline;
+
+}
+
+.partenaire-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 50px;
+}
+
+.partenaire-list h2 {
+    color: rgb(128, 128, 128);
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.partenaire-list h2:hover {
+    text-decoration: underline;
+}
+
+
+.work-title h2{
+    text-align: center;
+    font-size: 35px;
+}
+
+.work-title h2:hover {
+    text-decoration: underline;
+}
+
+
+.carousel-container {
+    position: relative;
+    width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
+    overflow: hidden; /* Cache tout contenu débordant */
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-images {
+    width: 100%; /* Assurez-vous que les images prennent toute la largeur */
+    overflow: hidden; /* Pour cacher les images qui dépassent */
+    display: flex; /* Utilise Flexbox pour disposer les images horizontalement */
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 600px;
+    display: none; /* Masque les images par défaut */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-images img.active {
+    display: block; /* Affiche l'image active */
+}
+
+/* Style des boutons de navigation */
+.prev,
+.next {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border: none;
+    padding: 15px; /* Ajoute un peu d'espace autour des icônes */
+    cursor: pointer; /* Change le curseur sur le pointeur */
+    z-index: 10; /* Assure que les flèches sont au-dessus des images */
+    border-radius: 50%; /* Donne une forme ronde aux boutons */
+    transition: background-color 0.3s ease; /* Effet de transition */
+}
+
+.prev {
+    left: 15px; /* Aligne le bouton "précédent" à gauche */
+}
+
+.next {
+    right: 15px; /* Aligne le bouton "suivant" à droite */
+}
+
+.prev i,
+.next i {
+    font-size: 30px; /* Taille de l'icône */
+    color: white; /* Couleur de l'icône */
+}
+
+/* Effet hover pour les boutons */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Change la couleur de fond au survol */
+}
+
+
+
+
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-title {
+    margin-bottom: 10px;
+}
+
+.contactform {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform input, .contactform textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.contactform button {
+    padding: 10px 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contactform button:hover {
+    background: #d35400;
+}
+
+
+
+footer {
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {     
+    border-bottom: 2px solid white; 
+}
+

@@ -1,0 +1,109 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px; /* Largeur maximale de la page */
+    margin: 50px auto; /* Centrage de la page avec des marges */
+    padding: 20px; /* Espace intérieur pour le conteneur */
+    background-color: #fff; /* Couleur de fond du conteneur */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Ombre douce pour l'effet 3D */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+h1 {
+    color: #006400; /* Couleur du texte du titre */
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+.contact-info {
+    margin-bottom: 30px; /* Espace sous chaque section de contact */
+}
+
+.contact-info h2 {
+    color: #333; /* Couleur des sous-titres */
+    margin-bottom: 10px; /* Espace sous les sous-titres */
+}
+
+.contact-info p {
+    margin: 5px 0; /* Espacement entre les paragraphes */
+}
+
+
+
+.frame {
+    padding: 15px; /* Espacement à l'intérieur du cadre */
+    border: 2px solid #006400; /* Bordure verte autour du cadre */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    margin-bottom: 20px; /* Espace sous le cadre */
+}
+
+/* Style pour les liens de numéro de téléphone et email */
+a.phone-link, a.email-link {
+    color: rgba(0, 0, 255, 0.911);
+    text-decoration: none;
+}
+
+a.phone-link:hover, a.email-link:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background-color: green;
+    padding: 10px;
+    display: flex;
+}
+
+header img {
+    width:50px;
+    height:50px;
+    border-radius: 20px;
+    margin-right: 40px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    position: relative;
+    margin-right: 20px; /* Ajoute un espacement à droite pour chaque lien (ajustez selon vos besoins) */
+    font-weight: bold;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid white; 
+    
+}
+
+
+footer {
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {     
+    border-bottom: 2px solid white; 
+}

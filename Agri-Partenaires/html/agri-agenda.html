@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda des Dates Importantes - Entreprise AGRI&PARTENAIRES</title>
+    <!-- Inclure le CSS de FullCalendar depuis le CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/agri-agenda.css">
+</head>
+<body>
+    
+    <header>
+        <a href="../index.html"><img src="../Logo/logo-AgriPartenires.jpeg"></a>
+        <nav class="accueil">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Accueil </a>
+            <a href="./agri-contact.html"><i class="fa-solid fa-phone"></i> Contact </a>
+            <a href="./agri-localisation.html"><i class="fa-solid fa-location-dot"></i> Lieu </a>
+            <a href="./agri-whoarewe.html"><i class="fa-solid fa-gear"></i> Qui sommes nous ?</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <!-- Titre de la page -->
+            <h1>Agenda des Dates Importantes</h1>
+            <!-- Conteneur du calendrier -->
+            <div id="calendar"></div>
+        </div>
+
+    </main>
+    
+
+    <footer>
+        <nav class="">
+            <a href="#" >Politique de cookies &nbsp;</a>
+            <a href="#" >Politique de confidentialité &nbsp;</a>
+            <a href="#">Mentions légales</a>
+            <p>&copy; 2024 Agri-Partenaires </p>
+        </nav>
+    </footer>
+
+    <!-- Inclure le JS de FullCalendar depuis le CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sélectionner l'élément où le calendrier sera affiché
+            var calendarEl = document.getElementById('calendar');
+
+            // Initialiser FullCalendar
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth', // Vue par défaut en mois
+                locale: 'fr', // Langue du calendrier en français
+                headerToolbar: { // Personnalisation de la barre d'outils
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [ // Liste des événements
+                    {
+                        title: 'Réunion annuelle des agriculteurs',
+                        start: '2024-09-15',
+                        description: 'Réunion avec tous les membres pour discuter des objectifs annuels.'
+                    },
+                    {
+                        title: 'Formation sur les techniques agricoles modernes',
+                        start: '2024-10-10',
+                        description: 'Atelier pratique avec notre partenaire @BILANCA.LIC.'
+                    },
+                    {
+                        title: 'Journée de la culture du maïs',
+                        start: '2024-11-05',
+                        description: 'Événement de sensibilisation sur l’importance de la culture du maïs.'
+                    }
+                ],
+                eventClick: function(info) { // Fonction pour afficher une alerte lorsque l'événement est cliqué
+                    alert('Événement : ' + info.event.title + '\n\nDescription : ' + info.event.extendedProps.description);
+                }
+            });
+
+            // Rendu du calendrier
+            calendar.render();
+        });
+    </script>
+
+</body>
+</html>
