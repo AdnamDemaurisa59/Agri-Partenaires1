@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function afficherEmail(nom, prenom, num, email, subject, message) {
-    let contact = "contact-agri&partenaires@gmail.com";
+    let contact = "contact-agri-partenaires@gmail.com";
     let body = message;
     let mailto = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=Bonjour,%0A%0A${encodeURIComponent(body)}%0A%0ABien Cordialement%0A%0A${nom} ${prenom}%0A%0A${num}`;
     window.location.href = mailto;

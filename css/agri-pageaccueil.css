@@ -3,6 +3,10 @@ header {
     background-color: green;
     padding: 10px;
     display: flex;
+    position: sticky;
+    top: 0;
+
+  
 }
 
 header img {
@@ -42,6 +46,59 @@ header nav a:hover {
     border-bottom: 2px solid white; 
     
 }
+
+
+
+/* Style pour le bouton menu mobile */
+.mobile-menu-toggle {
+    display: none; /* Masquer le bouton menu mobile par défaut */
+    background: none;
+    padding-left: 350px;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.mobile-menu-toggle:hover {
+    color: rgba(255, 255, 255, 0.826);
+}
+
+/* Style pour le menu mobile */
+.mobile-nav {
+    display: none; /* Masquer le menu mobile par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 68px; /* Ajustez en fonction de la hauteur de votre header */
+    right: 0;
+    background-color: black;
+    width: 45%;
+    z-index: 1000;
+}
+
+.mobile-nav a {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+    /* Masquer le menu desktop */
+    header nav {
+        display: none;
+    }
+
+    /* Afficher le bouton menu mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Afficher le menu mobile lorsqu'il est ouvert */
+    .mobile-nav.open {
+        display: flex;
+    }
+}
+
 
 .img-logo img {
     width: 97%;  /* L'image occupe toute la largeur du conteneur */
@@ -85,22 +142,11 @@ header nav a:hover {
 .presentation-entreprise {
     padding: 80px;
     text-align: center;
-    animation: reveal linear;
-    animation-timeline: view();
     display: flex;
     justify-content: center; /* Centrer les éléments horizontalement */
 }
 
-@keyframes reveal {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1); /* Corrigé l'erreur de typographie dans scale */
-        opacity: 1; /* Corrigé l'erreur de typographie dans opacity */
-    }
-}
+
 
 .presentation-entreprise2 {
     display: flex;

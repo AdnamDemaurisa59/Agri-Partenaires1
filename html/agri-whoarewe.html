@@ -18,6 +18,15 @@
             <a href="./agri-agenda.html"><i class="fa-solid fa-calendar-days"></i> Agenda </a>
             <a href="./agri-localisation.html"><i class="fa-solid fa-location-dot"></i> Lieu </a>
         </nav>
+        <button class="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="mobile-nav">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Accueil </a>
+            <a href="./agri-contact.html"><i class="fa-solid fa-phone"></i> Contact </a>
+            <a href="./agri-agenda.html"><i class="fa-solid fa-calendar-days"></i> Agenda </a>
+            <a href="./agri-localisation.html"><i class="fa-solid fa-location-dot"></i> Lieu </a>
+        </nav>
     </header>
 
     
@@ -65,6 +74,25 @@
             <p>&copy; 2024 Agri-Partenaires </p>
         </nav>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+    
+            menuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('open');
+            });
+    
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                    if (mobileNav.classList.contains('open')) {
+                        mobileNav.classList.remove('open');
+                    }
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
