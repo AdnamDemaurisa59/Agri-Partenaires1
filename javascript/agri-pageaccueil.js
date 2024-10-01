@@ -50,7 +50,7 @@ function script() {
         let prenom = document.getElementById("prenom").value;
         let num = document.getElementById("num").value;
         let email = document.getElementById("email").value;
-        let subject = document.getElementById("objet").value; // Récupération de la valeur de l'objet sélectionné
+        let subject = document.getElementById("objet").value; 
         let message = document.getElementById("message").value;
         afficherEmail(nom, prenom, num, email, subject, message);
     });
