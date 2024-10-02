@@ -180,7 +180,25 @@ header nav a:hover {
     }
 }
 
+.social-network {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
 
+.social-network a {
+    text-decoration: none;
+    color: #1877f2;
+}
+
+.social-network a:hover {
+    color: #1876f2c7;
+}
+
+.social-network a i {
+    font-size: 50px;
+    margin: 5px;
+}
 
 
 .collaboration {
