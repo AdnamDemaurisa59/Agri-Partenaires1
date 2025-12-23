@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   let autoSlide;
 
+  const currentYear = new Date().getFullYear();
+ document.querySelector("#year").textContent = currentYear;
+
   if (menuToggle && drawer) {
     menuToggle.addEventListener('click', () => {
       drawer.classList.toggle('open');
