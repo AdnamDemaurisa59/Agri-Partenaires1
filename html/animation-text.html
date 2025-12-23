@@ -4,36 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation-text</title>
+    <title>Agri-Partenaires | Loading</title>
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/animation-text.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-
-   
-
-    <header>
-        <div>
-            <img src="../Logo/logo-AgriPartenires.jpeg">
+<body class="loading-page">
+    <main class="loading-shell">
+        <div class="logo-orb">
+            <div class="logo-ring"></div>
+            <img src="../Logo/logo-AgriPartenires.jpeg" alt="Logo Agri-Partenaires" class="logo-mark">
         </div>
-    </header>
-
-
-    <main>
-
-    <div id=container>
-        Notre devise est la suivante :
-        <div id=flip>
-          <div><div>Apprendre</div></div>
-          <div><div>Entreprendre</div></div>
-          <div><div>Récolter</div></div>
+        <div class="loading-text">
+            <span class="eyebrow">Chargement</span>
+            <h1>Nous préparons vos champs numériques</h1>
+            <p class="muted">Apprendre • Récolter • Entreprendre</p>
         </div>
-        Agri-Partenaires!
-      </div>
-      
-      <p>a css3 animation demo</p>
+        <div class="loading-bar">
+            <div class="loading-bar-progress"></div>
+        </div>
     </main>
 
-    
+    <script>
+        setTimeout(() => {
+            window.location.href = '../agri-pageaccueil.html';
+        }, 3000);
+    </script>
 </body>
 </html>
