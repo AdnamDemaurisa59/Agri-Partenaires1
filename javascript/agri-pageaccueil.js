@@ -1,61 +1,66 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const images = Array.from(document.querySelectorAll('.carousel-images img'));
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const drawer = document.querySelector('.mobile-drawer');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  let currentIndex = 0;
+  let autoSlide;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel-images img');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    let currentIndex = 0;
+  if (menuToggle && drawer) {
+    menuToggle.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+    });
+  }
 
-    // Afficher l'image numéro 1 par défaut
-    images[0].classList.add('active');
+  const setActiveImage = (index) => {
+    images.forEach((img, i) => img.classList.toggle('active', i === index));
+  };
 
-    // Fonction pour afficher l'image suivante
-    function nextImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex++;
-        if (currentIndex >= images.length) {
-            currentIndex = 0;
-        }
-        images[currentIndex].classList.add('active');
-    }
+  const startAutoSlide = () => {
+    autoSlide = setInterval(() => nextImage(), 5200);
+  };
 
-    // Fonction pour afficher l'image précédente
-    function prevImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = images.length - 1;
-        }
-        images[currentIndex].classList.add('active');
-    }
+  const resetAutoSlide = () => {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  };
 
-    // Événement de clic sur les boutons de navigation
-    nextButton.addEventListener('click', nextImage);
-    prevButton.addEventListener('click', prevImage);
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    setActiveImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    setActiveImage(currentIndex);
+  }
+
+  if (images.length) {
+    setActiveImage(currentIndex);
+    if (nextButton) nextButton.addEventListener('click', () => { nextImage(); resetAutoSlide(); });
+    if (prevButton) prevButton.addEventListener('click', () => { prevImage(); resetAutoSlide(); });
+    startAutoSlide();
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const nom = document.getElementById('nom')?.value || '';
+      const prenom = document.getElementById('prenom')?.value || '';
+      const num = document.getElementById('num')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const subject = document.getElementById('objet')?.value || 'Prise de contact';
+      const message = document.getElementById('message')?.value || '';
+      afficherEmail(nom, prenom, num, email, subject, message);
+    });
+  }
 });
 
-
 function afficherEmail(nom, prenom, num, email, subject, message) {
-    let contact = "contact-agri-partenaires@gmail.com";
-    let body = message;
-    let mailto = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=Bonjour,%0A%0A${encodeURIComponent(body)}%0A%0ABien Cordialement%0A%0A${nom} ${prenom}%0A%0A${num}`;
-    window.location.href = mailto;
+  const contact = 'contact-agri-partenaires@gmail.com';
+  const body = `${message}\n\nCoordonnées :\n${nom} ${prenom}\n${num}\n${email}`;
+  const mailto = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
 }
-
-function script() {
-    let contactForm = document.getElementById("contactForm");
-    document.getElementById("btnEnvoyerMail").addEventListener("click", (event) => {
-        event.preventDefault();
-        let nom = document.getElementById("nom").value;
-        let prenom = document.getElementById("prenom").value;
-        let num = document.getElementById("num").value;
-        let email = document.getElementById("email").value;
-        let subject = document.getElementById("objet").value; 
-        let message = document.getElementById("message").value;
-        afficherEmail(nom, prenom, num, email, subject, message);
-    });
-}
-
-script();
-
-

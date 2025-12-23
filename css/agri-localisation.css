@@ -1,146 +1,15 @@
-
-
-
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-}
-
-header {
-    background-color: green;
-    padding: 10px;
-    display: flex;
-}
-
-header img {
-    width:50px;
-    height:50px;
-    border-radius: 20px;
-    margin-right: 40px;
-}
-
-
-header nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin: 5px;
-}
-
-
-header nav a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    position: relative;
-    margin-right: 20px; /* Ajoute un espacement à droite pour chaque lien (ajustez selon vos besoins) */
-    font-weight: bold;
-}
-
-header nav a:hover {
-    border-bottom: 2px solid white; 
-    
-}
-
-
-
-/* Style pour le bouton menu mobile */
-.mobile-menu-toggle {
-    display: none; /* Masquer le bouton menu mobile par défaut */
-    background: none;
-    padding-left: 350px;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-.mobile-menu-toggle:hover {
-    color: rgba(255, 255, 255, 0.826);
-}
-
-/* Style pour le menu mobile */
-.mobile-nav {
-    display: none; /* Masquer le menu mobile par défaut */
-    flex-direction: column;
-    position: absolute;
-    top: 68px; /* Ajustez en fonction de la hauteur de votre header */
-    right: 0;
-    background-color: black;
-    width: 45%;
-    z-index: 1000;
-}
-
-.mobile-nav a {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Media Queries pour les petits écrans */
-@media (max-width: 768px) {
-    /* Masquer le menu desktop */
-    header nav {
-        display: none;
-    }
-
-    /* Afficher le bouton menu mobile */
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    /* Afficher le menu mobile lorsqu'il est ouvert */
-    .mobile-nav.open {
-        display: flex;
-    }
-}
-
-
-
 .map-container {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-    border: 2px solid #006400;
-    border-radius: 8px;
-    overflow: hidden;
+  margin-top: 1rem;
+  overflow: hidden;
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.city {
-    text-align: center;
+.map-container iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: var(--radius-md);
 }
 
 .city-def {
-    text-align: center;
-}
-
-
-footer {
-    background-color: green;
-    color: #fff;
-    text-align: center;
-    padding: 5px;
-    margin-top: 30px;
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-}
-
-footer a:hover {     
-    border-bottom: 2px solid white; 
+  margin-top: 1rem;
 }
